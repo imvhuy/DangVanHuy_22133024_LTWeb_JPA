@@ -40,59 +40,12 @@ public class Video implements Serializable {
 
 	// bi-directional many-to-one association to Favorite
 
-	@OneToMany(mappedBy = "video")
-	private List<Favorite> favorites;
-
-	// bi-directional many-to-one association to Share
-	@OneToMany(mappedBy = "video")
-	private List<Share> shares;
-
-	public List<Favorite> getFavorites() {
-
-		return this.favorites;
-
-	}
-
-	public void setFavorites(List<Favorite> favorites) {
-		this.favorites = favorites;
-	}
-
-	public Favorite addFavorite(Favorite favorite) {
-		getFavorites().add(favorite);
-		favorite.setVideo(this);
-		return favorite;
-	}
-
-	public Favorite removeFavorite(Favorite favorite) {
-		getFavorites().remove(favorite);
-		favorite.setVideo(null);
-		return favorite;
-	}
-
-	public List<Share> getShares() {
-		return this.shares;
-	}
-
-	public void setShares(List<Share> shares) {
-		this.shares = shares;
-	}
-
-	public Share addShare(Share share) {
-		getShares().add(share);
-		share.setVideo(this);
-		return share;
-
-	}
-
-	public Share removeShare(Share share) {
-
-		getShares().remove(share);
-
-		share.setVideo(null);
-
-		return share;
-
-	}
+//	@OneToMany(mappedBy = "video")
+//	private List<Favorite> favorites;
+//
+//	// bi-directional many-to-one association to Share
+//	@OneToMany(mappedBy = "video")
+//	private List<Share> shares;
 
 	public String getVideoId() {
 		return videoId;
